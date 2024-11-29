@@ -185,7 +185,7 @@ class Agent(object):
 
         reverse_geocode_result = self.gmaps.reverse_geocode((lattitude, longitude))
         formatted_address = reverse_geocode_result[0]["formatted_address"]
-        return "Your address is" + formatted_address
+        return "Your address is " + formatted_address
 
     def vision(self, query: str, img_url: str) -> str:
         """Uses computer vision to process the image specified by the image url and answers the question based on the CV results"""
@@ -285,7 +285,7 @@ class Agent(object):
         llm_message_chat["messages"].append(
             {
                 "role": "user",
-                "content": "Knowledge Entity Store:" + str(top_entities),
+                "content": "Knowledge Entity Store: " + str(top_entities),
             }
         )
         llm_message_chat["messages"].extend(

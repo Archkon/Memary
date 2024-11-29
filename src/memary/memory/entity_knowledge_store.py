@@ -46,7 +46,7 @@ class EntityKnowledgeStore(BaseMemory):
         Args:
             memory_stream (list): list of MemoryItem
         """
-        knowledge_meory = self._convert_memory_to_knowledge_memory(
+        knowledge_memory = self._convert_memory_to_knowledge_memory(
             memory_stream)
         self._update_knowledge_memory(knowledge_meory)
 

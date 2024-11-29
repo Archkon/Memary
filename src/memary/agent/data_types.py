@@ -44,12 +44,9 @@ class Message:
 
     def __str__(self):
         llm_message_str = f"System Persona: {self.system_persona}\nUser Persona: {self.user_persona}\n"
-        for context in self.contexts:
-            llm_message_str += f"{str(context)},"
-        for memory in self.llm_message["memory_stream"]:
-            llm_message_str += f"{str(memory)},"
-        for entity in self.llm_message["knowledge_entity_store"]:
-            llm_message_str += f"{str(entity)},"
+        llm_message_str += ','.join(str(context) for context in self.contexts)
+        llm_message_str += ','.join(str(memory) for memory in self.llm_message["memory_stream"])
+        llm_message_str += ','.join(str(entity) for entity in self.llm_message["knowledge_entity_store"])
         return llm_message_str
 
     def _init_persona_to_messages(self):

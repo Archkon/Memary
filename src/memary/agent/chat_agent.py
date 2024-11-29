@@ -41,7 +41,7 @@ class ChatAgent(Agent):
         Args:
             role (str): 'system' or 'user'
             content (str): content of the chat
-            entities (Optional[List[str]], optional): entities from Memory systems. Defaults to None.
+            entities (Optional[List[str]]): entities from Memory systems. Defaults to None.
         """
         # Add a chat to the agent's memory.
         self._add_contexts_to_llm_message(role, content)
